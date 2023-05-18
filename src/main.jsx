@@ -10,6 +10,9 @@ import Home from './pages/Home/Home/Home';
 import Login from './pages/Login/Login';
 import Register from './pages/Register/Register';
 import AuthProvider from './provider/AuthProvider';
+import AllToys from './pages/AllToys/AllToys';
+import PrivateRoute from './Routes/PrivateRoute';
+import TabComponent from './pages/TabComponent/TabComponent';
 
 const router = createBrowserRouter([
   {
@@ -27,6 +30,14 @@ const router = createBrowserRouter([
       {
         path: '/register',
         element: <Register></Register>
+      },
+      {
+        path: '/allToy',
+        element: <PrivateRoute><AllToys></AllToys></PrivateRoute>
+      },
+      {
+        path: 'tab',
+        element: <TabComponent></TabComponent>
       }
     ]
   },

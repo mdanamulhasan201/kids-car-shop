@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import ActiveLink from "../../ActiveLink/ActiveLink";
 import { useContext } from "react";
 import { AuthContext } from "../../../provider/AuthProvider";
+import logo from '../../../assets/logo3.png'
 
 
 
@@ -10,21 +11,25 @@ const Navbar = () => {
     const { user, logOut } = useContext(AuthContext)
     console.log(user)
 
-    const handlerLogOut= () =>{
+    const handlerLogOut = () => {
         logOut()
-        .then(result =>{console.log(result)})
-        .catch(error =>{
-            console.log(error)
-        })
+            .then()
+            .catch(error => {
+                console.log(error)
+            })
     }
 
     const navItems = <>
         <li><ActiveLink to='/'>Home</ActiveLink></li>
-        <li><ActiveLink to='/allToys'>All Toys</ActiveLink></li>
-        <li><ActiveLink to='/myToys'>My Toys</ActiveLink></li>
-        <li><ActiveLink to='/addToys'>Add toys</ActiveLink></li>
+        <li><ActiveLink to='/allToy'>All Toys</ActiveLink></li>
+        {user &&
+            <>
+                <li><ActiveLink to='/myToys'>My Toys</ActiveLink></li>
+                <li><ActiveLink to='/addToys'>Add toys</ActiveLink></li>
+            </>
+        }
         <li><ActiveLink to='/blog'>Blog</ActiveLink></li>
-        
+
     </>
     return (
         <div className="navbar bg-slate-100 shadow-lg ">
@@ -37,14 +42,31 @@ const Navbar = () => {
                         {navItems}
                     </ul>
                 </div>
-                <Link to='/' className="btn btn-ghost normal-case text-xl">Toy Car Central <img src="" alt="" /></Link>
+
+                <div className="flex items-center">
+                    <img className="h-10 w-10 mr-2" src={logo} alt="" />
+                    <Link to='/' className=" normal-case font-bold sm:text-sm md:text-2xl md:block">Carville</Link>
+                </div>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
                     {navItems}
                 </ul>
             </div>
+
+
+
             <div className="navbar-end">
+
+                {user &&
+                    <div>
+                        <img className='rounded-circle me-2' data-toggle="tooltip" data-placement="left" title={user?.displayName} src={user?.photoURL} alt="" />
+                    </div>
+
+
+
+                }
+
                 {user ?
                     <button onClick={handlerLogOut} className="btn btn-active btn-sm btn-primary ">LogOut</button> :
 

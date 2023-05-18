@@ -11,6 +11,7 @@ import app from '../../Firebase/firebase.config';
 
 const Register = () => {
     const [error, setError] = useState('')
+
     const [success, setSuccess] = useState('')
 
     const { createUser } = useContext(AuthContext)
@@ -40,13 +41,16 @@ const Register = () => {
         createUser(email, password)
             .then(result => {
                 const loggedUser = result.user;
-                console.log(loggedUser)
+                setSuccess('User has been successfully login')
             })
             .catch(error => {
                 console.log(error)
                 setError(error.message)
             })
     }
+
+
+
 
     // sign in with google 
     const auth = getAuth(app);
@@ -66,6 +70,9 @@ const Register = () => {
                 setError(error.message)
             })
     }
+
+
+
 
     // git hub login
 
@@ -95,7 +102,7 @@ const Register = () => {
                         src={logo}
                         alt="Your Company"
                     />
-                    <h3 className='text-center font-bold'>Toy Car Central</h3>
+                    <h3 className='text-center font-bold'>Carville</h3>
                     <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
                         Create a new account
                     </h2>
@@ -194,11 +201,12 @@ const Register = () => {
                                     className="block w-full p-2 rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                                 />
                                 <div className="text-sm text-end mt-2">
-                                    <a href="#" className="font-semibold text-indigo-600 hover:text-indigo-500">
+                                    <a className="font-semibold text-indigo-600 hover:text-indigo-500">
                                         Forgot password?
                                     </a>
                                 </div>
-                                <p className='text-error'>{error}</p>
+                                <p className='text-red-600'>{error}</p>
+                                <p className='text-green-500'>{success}</p>
                             </div>
                         </div>
 

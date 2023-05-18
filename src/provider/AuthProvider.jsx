@@ -17,9 +17,6 @@ const AuthProvider = ({ children }) => {
 
     const [loading, setLoading] = useState(true)
 
-
-
-
     const createUser = (email, password) => {
         setLoading(true)
         return createUserWithEmailAndPassword(auth, email, password)
@@ -39,31 +36,31 @@ const AuthProvider = ({ children }) => {
         return signOut(auth)
     }
 
-    // const userUpdate = (name, photo) => {
-    //     setLoading(true);
-    //     return updateProfile(auth.currentUser, {
+    const userUpdate = (name, photo) => {
+        setLoading(true);
+        return updateProfile(auth.currentUser, {
 
-    //         displayName: name,
-    //         photoURL: photo,
-    //     })
-    // };
+            displayName: name,
+            photoURL: photo,
+        })
+    };
 
-    // const updateAuthData = (email, name, photo) => {
-    //     setUser({ ...user, email: email, displayName: name, photoURL: photo })
-    // }
+    const updateAuthData = (email, name, photo) => {
+        setUser({ ...user, email: email, displayName: name, photoURL: photo })
+    }
 
-    // // Update profile data in firebase
-    // const profileUpdate = (updateName, updatePhoto) => {
-    //     return updateProfile(auth.currentUser, {
-    //         displayName: updateName,
-    //         photoURL: updatePhoto,
-    //     });
-    // };
+    // Update profile data in firebase
+    const profileUpdate = (updateName, updatePhoto) => {
+        return updateProfile(auth.currentUser, {
+            displayName: updateName,
+            photoURL: updatePhoto,
+        });
+    };
 
-    // // Update profile data in local state from profile edit
-    // const updateProfileData = (updateName, updatePhoto) => {
-    //     setUser({ ...user, displayName: updateName, photoURL: updatePhoto });
-    // };
+    // Update profile data in local state from profile edit
+    const updateProfileData = (updateName, updatePhoto) => {
+        setUser({ ...user, displayName: updateName, photoURL: updatePhoto });
+    };
 
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, loggedUser => {
@@ -72,7 +69,7 @@ const AuthProvider = ({ children }) => {
         })
         // stop observing while unmounting
         return () => {
-            unsubscribe()
+            return unsubscribe()
         }
     }, [])
 
@@ -81,11 +78,11 @@ const AuthProvider = ({ children }) => {
         createUser,
         signIn,
         logOut,
-        // loading,
-        // userUpdate,
-        // updateAuthData,
-        // profileUpdate,
-        // updateProfileData
+        loading,
+        userUpdate,
+        updateAuthData,
+        profileUpdate,
+        updateProfileData
     };
 
     return (
