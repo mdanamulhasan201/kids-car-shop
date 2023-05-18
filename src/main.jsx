@@ -13,6 +13,7 @@ import AuthProvider from './provider/AuthProvider';
 import AllToys from './pages/AllToys/AllToys';
 import PrivateRoute from './Routes/PrivateRoute';
 import TabComponent from './pages/TabComponent/TabComponent';
+import AddToy from './pages/AddToy/AddToy';
 
 const router = createBrowserRouter([
   {
@@ -36,8 +37,8 @@ const router = createBrowserRouter([
         element: <PrivateRoute><AllToys></AllToys></PrivateRoute>
       },
       {
-        path: 'tab',
-        element: <TabComponent></TabComponent>
+        path: 'addToy',
+        element: <AddToy></AddToy>
       }
     ]
   },

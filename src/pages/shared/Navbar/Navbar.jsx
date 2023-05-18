@@ -25,14 +25,14 @@ const Navbar = () => {
         {user &&
             <>
                 <li><ActiveLink to='/myToys'>My Toys</ActiveLink></li>
-                <li><ActiveLink to='/addToys'>Add toys</ActiveLink></li>
+                <li><ActiveLink to='/addToy'>Add toys</ActiveLink></li>
             </>
         }
         <li><ActiveLink to='/blog'>Blog</ActiveLink></li>
 
     </>
     return (
-        <div className="navbar bg-slate-100 shadow-lg ">
+        <div className="navbar bg-slate-100 shadow-md px-5">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -60,7 +60,7 @@ const Navbar = () => {
 
                 {user &&
                     <div>
-                        <img className='rounded-circle me-2' data-toggle="tooltip" data-placement="left" title={user?.displayName} src={user?.photoURL} alt="" />
+                        <img className='rounded-full w-10 h-10 me-2' data-toggle="tooltip" data-placement="left" title={user?.displayName} src={user?.photoURL} alt="" />
                     </div>
 
 
