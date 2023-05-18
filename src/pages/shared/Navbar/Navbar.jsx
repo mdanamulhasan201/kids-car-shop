@@ -11,7 +11,7 @@ const Navbar = () => {
         <li><ActiveLink to='/blog'>Blog</ActiveLink></li>
     </>
     return (
-        <div className="navbar bg-base-200 ">
+        <div className="navbar bg-slate-100 shadow-lg ">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -21,7 +21,7 @@ const Navbar = () => {
                         {navItems}
                     </ul>
                 </div>
-                <Link to='/' className="btn btn-ghost normal-case text-xl">Toy Car <img src="" alt="" /></Link>
+                <Link to='/' className="btn btn-ghost normal-case text-xl">Toy Car Central <img src="" alt="" /></Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
@@ -29,8 +29,8 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <button className="btn btn-active btn-primary mr-5">Login</button>
-                <button className="btn btn-outline btn-primary">Register</button>
+               <Link to='/login'> <button className="btn btn-active btn-sm btn-primary mr-5">Login</button></Link>
+               <Link to='/register'> <button className="btn btn-outline btn-sm btn-primary">Register</button></Link>
             </div>
         </div>
     );
