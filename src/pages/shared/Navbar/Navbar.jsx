@@ -1,14 +1,30 @@
 import { Link } from "react-router-dom";
 import ActiveLink from "../../ActiveLink/ActiveLink";
+import { useContext } from "react";
+import { AuthContext } from "../../../provider/AuthProvider";
+
 
 
 const Navbar = () => {
+
+    const { user, logOut } = useContext(AuthContext)
+    console.log(user)
+
+    const handlerLogOut= () =>{
+        logOut()
+        .then(result =>{console.log(result)})
+        .catch(error =>{
+            console.log(error)
+        })
+    }
+
     const navItems = <>
         <li><ActiveLink to='/'>Home</ActiveLink></li>
         <li><ActiveLink to='/allToys'>All Toys</ActiveLink></li>
         <li><ActiveLink to='/myToys'>My Toys</ActiveLink></li>
         <li><ActiveLink to='/addToys'>Add toys</ActiveLink></li>
         <li><ActiveLink to='/blog'>Blog</ActiveLink></li>
+        
     </>
     return (
         <div className="navbar bg-slate-100 shadow-lg ">
@@ -29,8 +45,15 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-               <Link to='/login'> <button className="btn btn-active btn-sm btn-primary mr-5">Login</button></Link>
-               <Link to='/register'> <button className="btn btn-outline btn-sm btn-primary">Register</button></Link>
+                {user ?
+                    <button onClick={handlerLogOut} className="btn btn-active btn-sm btn-primary ">LogOut</button> :
+
+                    <div>
+                        <Link to='/login'> <button className="btn btn-active btn-sm btn-primary mr-2">Login</button></Link>
+                        <Link to='/register'> <button className="btn btn-outline btn-sm btn-primary">Register</button></Link>
+                    </div>
+
+                }
             </div>
         </div>
     );
