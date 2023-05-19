@@ -12,8 +12,8 @@ import Register from './pages/Register/Register';
 import AuthProvider from './provider/AuthProvider';
 import AllToys from './pages/AllToys/AllToys';
 import PrivateRoute from './Routes/PrivateRoute';
-import TabComponent from './pages/TabComponent/TabComponent';
 import AddToy from './pages/AddToy/AddToy';
+import MyCars from './MyCars/MyCars';
 
 const router = createBrowserRouter([
   {
@@ -37,8 +37,12 @@ const router = createBrowserRouter([
         element: <PrivateRoute><AllToys></AllToys></PrivateRoute>
       },
       {
-        path: 'addToy',
+        path: '/addToy',
         element: <AddToy></AddToy>
+      },
+      {
+        path: '/myCars',
+        element: <MyCars></MyCars>
       }
     ]
   },

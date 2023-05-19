@@ -21,10 +21,10 @@ const Navbar = () => {
 
     const navItems = <>
         <li><ActiveLink to='/'>Home</ActiveLink></li>
-        <li><ActiveLink to='/allToy'>All Toys</ActiveLink></li>
+        <li><ActiveLink to='/allToy'>All Cars</ActiveLink></li>
         {user &&
             <>
-                <li><ActiveLink to='/myToys'>My Toys</ActiveLink></li>
+                <li><ActiveLink to='/myCars'>My Cars</ActiveLink></li>
                 <li><ActiveLink to='/addToy'>Add toys</ActiveLink></li>
             </>
         }

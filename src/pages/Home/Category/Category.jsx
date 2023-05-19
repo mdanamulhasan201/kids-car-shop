@@ -57,7 +57,7 @@ const Category = () => {
                     </div>
                 </div>
             </div>
-            <div className=" mt-5 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 mb-5 gap-5">
+            <div className=" mt-5  grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 mb-5 gap-5">
                 {toys?.map((toy) => (
                     <TabComponent toy={toy} key={toy._id}>
 

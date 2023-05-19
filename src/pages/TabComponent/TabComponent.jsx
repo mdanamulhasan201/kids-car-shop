@@ -3,7 +3,8 @@ const TabComponent = ({ toy }) => {
     // console.log(toy)
     const { image, carName, price } = toy
     return (
-        <div className="card w-96 bg-base-100 shadow-xl">
+     
+            <div className="card w-96 bg-red-700 shadow-2xl ">
             <figure className="px-10 pt-10">
                 <img src={image} alt="Shoes" className="rounded-xl" />
             </figure>
@@ -15,6 +16,7 @@ const TabComponent = ({ toy }) => {
                 </div>
             </div>
         </div>
+       
     );
 };
 
