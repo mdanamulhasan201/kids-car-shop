@@ -5,7 +5,7 @@ import { AuthContext } from "../provider/AuthProvider";
 const MyCars = () => {
     const { user } = useContext(AuthContext)
     const [mycar, setMyCar] = useState([])
-    const { carName, userName, category, description, image, postedBy, price, quantity, added, _id, location } = mycar;
+
 
 
     useEffect(() => {
