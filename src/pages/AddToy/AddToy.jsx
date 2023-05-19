@@ -3,13 +3,24 @@ import { useForm } from "react-hook-form";
 import { AuthContext } from "../../provider/AuthProvider";
 
 
+
 const AddToy = () => {
     const { user } = useContext(AuthContext);
 
 
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
-    const onSubmit = data => console.log(data);
-
+    const onSubmit = data => {
+        fetch('http://localhost:5000/postCar', {
+            method: 'POST',
+            headers: {
+                'Content-type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+            .then(res => res.json())
+            .then(result => console.log(result))
+        console.log(data);
+    }
     return (
         <div className="md:h-[100vh] flex justify-center  md:mt-20">
 
@@ -23,9 +34,10 @@ const AddToy = () => {
                                 <p className="font-bold text-xl md:mr-7">Car name:</p>
                                 <input
                                     className="border-solid border-2 p-4 m-2 bg-slate-50"
-                                    {...register("salary", { required: true })}
+                                    {...register("carName", { required: true })}
                                     placeholder="Car Name"
-                                    defaultValue="AENEAN QUIS"
+                                
+
                                 />
                             </div>
 
@@ -33,9 +45,11 @@ const AddToy = () => {
                                 <p className="font-bold text-xl">Toy URL:</p>
                                 <input
                                     className="border-solid border-2 p-4 m-2 bg-slate-50"
-                                    {...register("image")}
+                                    {...register("image",{ required: true })}
                                     placeholder="Image URL"
                                     type="url"
+                                
+
 
                                 />
                             </div>
@@ -48,9 +62,10 @@ const AddToy = () => {
                                 <p className="font-bold text-xl">Seller Name:</p>
                                 <input
                                     className="border-solid border-2 p-4 m-2 bg-slate-50"
-                                    {...register("title")}
-                                    placeholder="title"
+                                    {...register("userName", { required: true })}
+                                    placeholder="UserName"
                                     value={user?.displayName}
+                                   
                                 />
                             </div>
 
@@ -61,9 +76,11 @@ const AddToy = () => {
                                 <input
                                     className="border-solid border-2 p-4 m-2 bg-slate-50"
                                     value={user?.email}
-                                    {...register("postedBy")}
+                                    readOnly
+                                    {...register("postedBy", { required: true })}
                                     placeholder="your email"
                                     type="email"
+                                  
                                 />
                             </div>
                         </div>
@@ -76,8 +93,9 @@ const AddToy = () => {
                                 <input
                                     className="border-solid border-2 p-4 m-2 bg-slate-50"
                                     {...register("price", { required: true })}
-                                    placeholder="price"
+                                    placeholder="Price"
                                     defaultValue="$5000"
+                                   
                                 />
                             </div>
 
@@ -90,6 +108,7 @@ const AddToy = () => {
                                     {...register("quantity", { required: true })}
                                     placeholder="Quantity"
                                     type="number"
+                                
                                 />
 
                             </div>
@@ -98,37 +117,52 @@ const AddToy = () => {
 
 
                         <div className="md:flex">
-
-                            <div className="flex items-center md:mr-14">
-                                <p className="font-bold text-xl md:mr-5">Select Car:</p>
-                                <select className="border-solid border-2 p-4 m-2 bg-slate-50" {...register("category")}>
-                                    <option value="Engineering">FEUGIAT DIAM</option>
-                                    <option value="Editor">AENEAN SODALES</option>
-                                    <option value="writer">AENEAN QUIS</option>
-                                    <option value="Developer">AENEAN SODALES</option>
-                                </select>
-                            </div>
-
-
-                            <div className="flex items-center md:mr-14">
-                                <p className="font-bold text-xl md:mr-5">Select Car:</p>
+                            <div className="text-center flex items-center">
+                                <p className="font-bold text-xl md:mr-7">Location:</p>
                                 <input
-                                    className="border-solid border-2 p-4 m-2 bg-slate-50"
-                                    {...register("deadline")}
-                                    placeholder="deadline"
-                                    type="date"
+                                    className="border-solid border-2 p-4 m-2 md:mr-24 bg-slate-50"
+                                    {...register("location", { required: true })}
+                                    placeholder="Location"
+                                 
+
                                 />
                             </div>
 
+
+
+                            <div className="flex items-center ">
+                                <p className="font-bold text-xl md:mr-5">Date:</p>
+                                <input
+                                    className="border-solid border-2 p-4 m-2 bg-slate-50"
+                                    {...register("added", { required: true })}
+                                    placeholder="time"
+                                    type="date"
+                                   
+                                />
+                            </div>
+
+                        </div>
+
+
+                        <div className="flex items-center md:mr-14 ">
+                            <p className="font-bold text-xl md:mr-9">Category:</p>
+                            <select className="border-solid md:w-[550px]  border-2 p-4 m-2 bg-slate-50" {...register("category", { required: true })}>
+                                <option value="Feugiatdiam">FEUGIAT DIAM</option>
+                                <option value="AeneanSodales">AENEAN SODALES</option>
+                                <option value="AenenQuis">AENEAN QUIS</option>
+                                <option value="AeneanSodales">AENEAN SODALES</option>
+                            </select>
+                          
                         </div>
 
                         <div className="text-center flex items-center">
                             <p className="font-bold text-xl md:mr-14">Details:</p>
                             <input
                                 className="border-solid border-2 p-4 m-2 md:h-20 md:w-[550px] bg-slate-50"
-                                {...register("description")}
+                                {...register("description", { required: true })}
                                 placeholder="Description"
-                                
+                              
+
                             />
                         </div>
                         <input className="btn btn-primary btn-block flex mx-auto mt-10" value="Car Added" type="submit" />
