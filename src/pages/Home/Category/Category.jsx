@@ -19,7 +19,7 @@ const Category = () => {
 
     // const reult = toys?.filter((toy) => toy.category == activeTab)
     // console.log(reult)
- 
+
 
 
     const handleTabClick = (tabName) => {
@@ -29,27 +29,27 @@ const Category = () => {
 
 
         <div>
-            <h1 className="title text-center mt-5 p-5">Car Category</h1>
+            <h2 className="text-3xl font-bold mt-20 mb-10 text-center">Car <span className="text-primary">Details</span></h2>
             <div className=" text-center  bg-slate-100">
                 <div className="text-center m-auto">
                     <div className="gap-5 ">
                         <div
                             onClick={() => handleTabClick("Feugiatdiam")}
-                            className={`tab tab-lg tab-lifted  ${activeTab == "Feugiatdiam" ? " bg-[#4406CB] text-white" : ""
+                            className={`tab tab-lg tab-lifted  ${activeTab == "Feugiatdiam" ? " bg-primary text-white" : ""
                                 }`}
                         >
                             FEUGIAT DIAM
                         </div>
                         <div
                             onClick={() => handleTabClick("AeneanSodales")}
-                            className={`tab tab-lg tab-lifted  ${activeTab == "AeneanSodales" ? " bg-[#4406CB] text-white" : ""
+                            className={`tab tab-lg tab-lifted  ${activeTab == "AeneanSodales" ? " bg-primary text-white" : ""
                                 }`}
                         >
                             AENEAN SODALES
                         </div>
                         <div
                             onClick={() => handleTabClick("AenenQuis")}
-                            className={`tab tab-lg tab-lifted  ${activeTab == "AenenQuis" ? " bg-[#4406CB] text-white" : ""
+                            className={`tab tab-lg tab-lifted  ${activeTab == "AenenQuis" ? " bg-primary text-white" : ""
                                 }`}
                         >
                             AENEAN QUIS
