@@ -20,15 +20,15 @@ const Navbar = () => {
     }
 
     const navItems = <>
-        <li><ActiveLink to='/'>Home</ActiveLink></li>
-        <li><ActiveLink to='/allToy'>All Cars</ActiveLink></li>
+        <li className="font-bold"><ActiveLink to='/'>Home</ActiveLink></li>
+        <li className="font-bold"><ActiveLink to='/allToy'>All Cars</ActiveLink></li>
         {user &&
             <>
-                <li><ActiveLink to='/myCars'>My Cars</ActiveLink></li>
-                <li><ActiveLink to='/addToy'>Add toys</ActiveLink></li>
+                <li className="font-bold"><ActiveLink to='/myCars'>My Cars</ActiveLink></li>
+                <li className="font-bold"><ActiveLink to='/addToy'>Add toys</ActiveLink></li>
             </>
         }
-        <li><ActiveLink to='/blog'>Blog</ActiveLink></li>
+        <li className="font-bold"><ActiveLink to='/blog'>Blog</ActiveLink></li>
 
     </>
     return (

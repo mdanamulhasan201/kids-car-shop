@@ -24,11 +24,12 @@ const AddToy = () => {
         // console.log(data);
     }
     return (
-        <div className="flex justify-center  md:mt-20">
+        <div className="flex justify-center  md:my-20">
 
             <div className="row">
+                <h2 className="font-bold text-3xl mb-5 text-center">Add <span className="text-primary">Car</span></h2>
                 <div className="bg-slate-100 shadow-lg md:p-28 p-5">
-                    <h2 className="font-bold text-3xl mb-5 text-center">Add Toy</h2>
+
                     <form onSubmit={handleSubmit(onSubmit)}>
 
                         <div className="md:flex">
@@ -38,7 +39,7 @@ const AddToy = () => {
                                     className="border-solid border-2 p-4 m-2 bg-slate-50"
                                     {...register("carName", { required: true })}
                                     placeholder="Car Name"
-                                
+
 
                                 />
                             </div>
@@ -47,10 +48,10 @@ const AddToy = () => {
                                 <p className="font-bold text-xl">Toy URL:</p>
                                 <input
                                     className="border-solid border-2 p-4 m-2 bg-slate-50"
-                                    {...register("image",{ required: true })}
+                                    {...register("image", { required: true })}
                                     placeholder="Image URL"
                                     type="url"
-                                
+
 
 
                                 />
@@ -67,7 +68,7 @@ const AddToy = () => {
                                     {...register("userName", { required: true })}
                                     placeholder="UserName"
                                     value={user?.displayName}
-                                   
+
                                 />
                             </div>
 
@@ -82,7 +83,7 @@ const AddToy = () => {
                                     {...register("postedBy", { required: true })}
                                     placeholder="your email"
                                     type="email"
-                                  
+
                                 />
                             </div>
                         </div>
@@ -97,7 +98,7 @@ const AddToy = () => {
                                     {...register("price", { required: true })}
                                     placeholder="Price"
                                     value={user?.price}
-                                   
+
                                 />
                             </div>
 
@@ -110,7 +111,7 @@ const AddToy = () => {
                                     {...register("quantity", { required: true })}
                                     placeholder="Quantity"
                                     type="number"
-                                
+
                                 />
 
                             </div>
@@ -125,7 +126,7 @@ const AddToy = () => {
                                     className="border-solid border-2 p-4 m-2 md:mr-24 bg-slate-50"
                                     {...register("location", { required: true })}
                                     placeholder="Location"
-                                 
+
 
                                 />
                             </div>
@@ -139,7 +140,7 @@ const AddToy = () => {
                                     {...register("added", { required: true })}
                                     placeholder="time"
                                     type="date"
-                                   
+
                                 />
                             </div>
 
@@ -154,7 +155,7 @@ const AddToy = () => {
                                 <option value="AenenQuis">AENEAN QUIS</option>
                                 <option value="AeneanSodales">AENEAN SODALES</option>
                             </select>
-                          
+
                         </div>
 
                         <div className="text-center flex items-center">
@@ -163,7 +164,7 @@ const AddToy = () => {
                                 className="border-solid border-2 p-4 m-2 md:h-20 md:w-[550px] bg-slate-50"
                                 {...register("description", { required: true })}
                                 placeholder="Description"
-                              
+
 
                             />
                         </div>

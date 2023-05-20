@@ -32,7 +32,7 @@ const AllToys = () => {
 
     return (
         <div className="">
-            <h3 className="font-bold text-center text-3xl my-10"> All Cars </h3>
+            <h3 className="font-bold text-center text-3xl my-10"> All <span className="text-primary"> Cars</span> </h3>
             <div className="form-control text-center mb-10">
                 <div className="input-group justify-center">
                     <input onChange={(e) => setSearch(e.target.value)} type="text" placeholder="Search…" className="input input-bordered" />

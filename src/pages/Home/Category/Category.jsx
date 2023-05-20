@@ -26,7 +26,7 @@ const Category = () => {
 
 
         <div>
-            <h2 className="text-3xl font-bold mt-20 mb-10 text-center">Car <span className="text-primary">Details</span></h2>
+            <h2 className="text-3xl font-bold mt-20 mb-10 text-center">Car <span className="text-primary">Category</span></h2>
             <div className=" text-center  bg-slate-100">
                 <div className="text-center m-auto">
                     <div className="gap-5 ">

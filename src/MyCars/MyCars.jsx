@@ -1,9 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../provider/AuthProvider";
 import Swal from "sweetalert2";
-import UpdateData from "../pages/UpdateData/UpdateData";
 import { Link } from "react-router-dom";
-
 
 
 const MyCars = () => {
@@ -13,7 +11,6 @@ const MyCars = () => {
 
     const [resets, SetRest] = useState(mycar)
 
-  
 
 
 
@@ -42,19 +39,6 @@ const MyCars = () => {
                 fetch(`http://localhost:5000/deleteCar/${id}`, {
                     method: 'DELETE'
 
-
-        //             fetch(`http://localhost:5000/updateCar/${id}`, {
-        //     method: 'PATCH',
-        //     headers: {
-        //         'Content-type': 'application/json'
-        //     },
-        //     body: JSON.stringify(data)
-        // })
-        //     .then(res => res.json())
-        //     .then(result => {
-        //         setSuccess('Data Added', result)
-        //     })
-
                 })
                     .then(res => res.json())
                     .then(data => {
@@ -80,7 +64,7 @@ const MyCars = () => {
 
     return (
         <div className="overflow-x-auto w-full mt-10">
-            <h2 className="text-center font-bold my-5 text-3xl">My <span className="text-[#570DF8]">Cars</span></h2>
+            <h2 className="text-center font-bold my-5 text-3xl">My <span className="text-primary">Cars</span></h2>
             <table className="table w-full">
                 {/* head */}
                 <thead>
