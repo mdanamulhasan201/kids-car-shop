@@ -97,7 +97,7 @@ const AddToy = () => {
                                     className="border-solid border-2 p-4 m-2 bg-slate-50"
                                     {...register("price", { required: true })}
                                     placeholder="Price"
-                                    value={user?.price}
+                                    defaultValue={"$"}
 
                                 />
                             </div>
@@ -150,10 +150,15 @@ const AddToy = () => {
                         <div className="flex items-center md:mr-14 ">
                             <p className="font-bold text-xl md:mr-9">Category:</p>
                             <select className="border-solid md:w-[550px]  border-2 p-4 m-2 bg-slate-50" {...register("category", { required: true })}>
-                                <option value="Feugiatdiam">FEUGIAT DIAM</option>
-                                <option value="AeneanSodales">AENEAN SODALES</option>
-                                <option value="AenenQuis">AENEAN QUIS</option>
-                                <option value="AeneanSodales">AENEAN SODALES</option>
+                                <option value="sports Car">Sports Car</option>
+                                <option value="Race Car">Race Car</option>
+                                <option value="RideOn Truck">Ride On Truck</option>
+                                <option value="Toys Truck ">Toys Truck</option>
+                                <option value="Land Rover">Land Rover</option>
+                                <option value="Toyota">Toyota</option>
+                                <option value="Tractor">Tractor</option>
+                                
+                               
                             </select>
 
                         </div>

@@ -10,10 +10,10 @@ const TabComponent = ({ toy }) => {
         <div>
          
             <div className="px-5  flex justify-center items-center">
-                <div className="container flex justify-center">
-                    <div className="max-w-sm py-10">
-                        <div className="bg-slate-100 relative shadow-lg hover:shadow-2xl">
-                            <img className="rounded-t-lg w-[900px] " src={image} alt="" />
+                <div className="container flex  justify-center">
+                    <div className="max-w-sm  py-10">
+                        <div className="bg-slate-100  relative shadow-lg hover:shadow-2xl">
+                            <img className="rounded-t-lg w-[900px] h-80 " src={image} alt="" />
                             <div className="py-6 px-8 rounded-lg bg-slate-100">
                                 <h1 className="text-gray-700  font-bold text-2xl mb-3 hover:text-gray-900 hover:cursor-pointer">Car Name: <span className="text-primary">{carName}</span></h1>
                                 <p className="text-gray-700 tracking-wide  hover:text-gray-900 hover:cursor-pointer"><span className="font-bold">Price:</span> {price}</p>

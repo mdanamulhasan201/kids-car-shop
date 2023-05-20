@@ -5,7 +5,7 @@ const Gallery = () => {
 
         <>
             <h3 className='text-center font-bold text-3xl  mt-28 mb-8 '> Car <span className='text-primary '>Gallery</span></h3>
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-5 gap-10 mb-8 p-2 shadow-md'>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-5 gap-10 mb-8 p-2 sm:ms-20 '>
                 <div className="card">
                     <div className="image">
                         <img src="https://staranddaisy.in/wp-content/uploads/2023/03/lfc_1366m_yellow_1.jpg" />

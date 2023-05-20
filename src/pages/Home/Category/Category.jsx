@@ -3,7 +3,7 @@ import TabComponent from "../../TabComponent/TabComponent";
 
 const Category = () => {
     const [toys, setToy] = useState([])
-    const [activeTab, setActiveTab] = useState('Feugiatdiam');
+    const [activeTab, setActiveTab] = useState('Toyota');
     // console.log(toys)
 
     useEffect(() => {
@@ -12,11 +12,11 @@ const Category = () => {
             .then(res => res.json())
             .then(result => {
                 setToy(result.slice(0, 3))
-              
+
             })
     }, [activeTab])
 
-  
+
 
 
     const handleTabClick = (tabName) => {
@@ -31,25 +31,25 @@ const Category = () => {
                 <div className="text-center m-auto">
                     <div className="gap-5 ">
                         <div
-                            onClick={() => handleTabClick("Feugiatdiam")}
-                            className={`tab tab-lg tab-lifted  ${activeTab == "Feugiatdiam" ? " bg-primary text-white" : ""
+                            onClick={() => handleTabClick("Toyota")}
+                            className={`tab tab-lg tab-lifted  ${activeTab == "Toyota" ? " bg-primary text-white" : ""
                                 }`}
                         >
-                            FEUGIAT DIAM
+                            Toyota
                         </div>
                         <div
-                            onClick={() => handleTabClick("AeneanSodales")}
-                            className={`tab tab-lg tab-lifted  ${activeTab == "AeneanSodales" ? " bg-primary text-white" : ""
+                            onClick={() => handleTabClick("Race Car")}
+                            className={`tab tab-lg tab-lifted  ${activeTab == "Race Car" ? " bg-primary text-white" : ""
                                 }`}
                         >
-                            AENEAN SODALES
+                            Race Car
                         </div>
                         <div
-                            onClick={() => handleTabClick("AenenQuis")}
-                            className={`tab tab-lg tab-lifted  ${activeTab == "AenenQuis" ? " bg-primary text-white" : ""
+                            onClick={() => handleTabClick("Land Rover")}
+                            className={`tab tab-lg tab-lifted  ${activeTab == "Land Rover" ? " bg-primary text-white" : ""
                                 }`}
                         >
-                            AENEAN QUIS
+                            Land Rover
                         </div>
                     </div>
                 </div>
