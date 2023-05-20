@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../../provider/AuthProvider";
 
@@ -6,9 +6,9 @@ import { AuthContext } from "../../provider/AuthProvider";
 
 const AddToy = () => {
     const { user } = useContext(AuthContext);
-
-
+    const [success, setSuccess] = useState('')
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
+
     const onSubmit = data => {
         fetch('http://localhost:5000/postCar', {
             method: 'POST',
@@ -18,8 +18,10 @@ const AddToy = () => {
             body: JSON.stringify(data)
         })
             .then(res => res.json())
-            .then(result => console.log(result))
-        console.log(data);
+            .then(result => {
+                setSuccess('Data Added', result)
+            })
+        // console.log(data);
     }
     return (
         <div className="flex justify-center  md:mt-20">
@@ -94,7 +96,7 @@ const AddToy = () => {
                                     className="border-solid border-2 p-4 m-2 bg-slate-50"
                                     {...register("price", { required: true })}
                                     placeholder="Price"
-                                    defaultValue="$5000"
+                                    value={user?.price}
                                    
                                 />
                             </div>
@@ -166,6 +168,7 @@ const AddToy = () => {
                             />
                         </div>
                         <input className="btn btn-primary btn-block flex mx-auto mt-10" value="Car Added" type="submit" />
+                        <p>{success}</p>
                     </form>
                 </div>
             </div>

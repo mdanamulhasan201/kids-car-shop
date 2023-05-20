@@ -8,7 +8,7 @@ const CategoryDetails = () => {
   const { id } = useParams()
   const [detailsData, setDetailsData] = useState({})
   console.log(detailsData)
-  const { carName, userName, category, quantity, description, image, location, postedBy, price } = detailsData
+  const { carName, userName, quantity, description, image, location, postedBy, price } = detailsData
 
   useEffect(() => {
     fetch(`http://localhost:5000/carDetails/${id}`)

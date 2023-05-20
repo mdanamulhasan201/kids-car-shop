@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const TabComponent = ({ toy }) => {
     // console.log(toy)
-    const { carName, userName, category, quantity, description, image, location, postedBy, price, _id } = toy
+    const { carName,  quantity,  image, location,  price, _id } = toy
     return (
 
 

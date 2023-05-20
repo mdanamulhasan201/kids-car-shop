@@ -11,14 +11,13 @@ import Login from './pages/Login/Login';
 import Register from './pages/Register/Register';
 import AuthProvider from './provider/AuthProvider';
 import AllToys from './pages/AllToys/AllToys';
-// import PrivateRoute from './Routes/PrivateRoute';
 import AddToy from './pages/AddToy/AddToy';
 import MyCars from './MyCars/MyCars';
 import ViewDetails from './pages/ViewDetails/ViewDetails';
-import UpdateData from './pages/UpdateData/UpdateData';
 import CategoryDetails from './pages/Home/Category/CategoryDetails';
 import PrivateRoute from './Routes/PrivateRoute';
-// import UpdateCar from './pages/UpdateData/UpdateCar';
+import UpdateCar from './pages/UpdateData/UpdateCar';
+
 
 const router = createBrowserRouter([
   {
@@ -48,11 +47,11 @@ const router = createBrowserRouter([
       },
 
 
-      // {
-      //   path: 'updateCar/:id',
-      //   element: <UpdateCar></UpdateCar>,
-      //   loader: ({ params }) => fetch(`http://localhost:5000/updateCars/${params.id}`)
-      // },
+      {
+        path: 'updateCar/:id',
+        element: <UpdateCar></UpdateCar>,
+        // loader: ({ params }) => fetch(`http://localhost:5000/updateCars/${params.id}`)
+      },
      
       {
         path: 'allToy',
@@ -68,16 +67,7 @@ const router = createBrowserRouter([
       {
         path: 'myCars',
         element: <PrivateRoute><MyCars></MyCars></PrivateRoute>,
-
-
-
       },
-
-      {
-        path: 'updateData/:id',
-        element: <UpdateData></UpdateData>,
-
-      }
 
     ]
   },

@@ -1,22 +1,19 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../provider/AuthProvider";
-import { Link } from "react-router-dom";
-// import UpdateData from "../pages/UpdateData/UpdateData";
 import Swal from "sweetalert2";
 import UpdateData from "../pages/UpdateData/UpdateData";
+import { Link } from "react-router-dom";
 
 
 
 const MyCars = () => {
     const { user } = useContext(AuthContext)
-    // console.log(user)
+ 
     const [mycar, setMyCar] = useState([])
-    // const { _id } = mycar
+
     const [resets, SetRest] = useState(mycar)
 
-    // const result = useLoaderData()
-    // console.log(result )
-
+  
 
 
 
@@ -45,6 +42,19 @@ const MyCars = () => {
                 fetch(`http://localhost:5000/deleteCar/${id}`, {
                     method: 'DELETE'
 
+
+        //             fetch(`http://localhost:5000/updateCar/${id}`, {
+        //     method: 'PATCH',
+        //     headers: {
+        //         'Content-type': 'application/json'
+        //     },
+        //     body: JSON.stringify(data)
+        // })
+        //     .then(res => res.json())
+        //     .then(result => {
+        //         setSuccess('Data Added', result)
+        //     })
+
                 })
                     .then(res => res.json())
                     .then(data => {
@@ -67,22 +77,6 @@ const MyCars = () => {
 
     }
 
-
-
-    const handleUpdateCar = (data) => {
-        fetch(`http://localhost:5000/updateCar/${data._id}`, {
-            method: "PUT",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(data),
-
-        })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data)
-            })
-    }
 
     return (
         <div className="overflow-x-auto w-full mt-10">
@@ -114,13 +108,7 @@ const MyCars = () => {
                                 <td>{car.quantity}</td>
                                 <td>
 
-                                    {/* <Link to={`updateCar/${car._id}`}><button className="btn  btn-primary btn-xs">Edit</button></Link> */}
-                                    <label htmlFor="my-modal-5" className="btn btn-primary btn-xs">Edit</label>
-                                    <UpdateData
-                                        key={car._id}
-                                        car={car}
-                                        handleUpdateCar={handleUpdateCar}
-                                    ></UpdateData>
+                            <Link to={`/updateCar/${car._id}`}><button className="btn  btn-primary btn-xs">Edit</button></Link>
 
 
                                 </td>

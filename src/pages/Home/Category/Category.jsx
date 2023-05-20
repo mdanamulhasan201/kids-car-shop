@@ -12,14 +12,11 @@ const Category = () => {
             .then(res => res.json())
             .then(result => {
                 setToy(result.slice(0, 3))
-                // setToy(result)
-                // console.log(result)
+              
             })
     }, [activeTab])
 
-    // const reult = toys?.filter((toy) => toy.category == activeTab)
-    // console.log(reult)
-
+  
 
 
     const handleTabClick = (tabName) => {
