@@ -1,8 +1,9 @@
+import { Link } from "react-router-dom";
 
 
 const Cars = ({ car }) => {
-    const { carName, userName, category, description, image, postedBy, price, quantity, added, _id, location} = car;
-    console.log(car)
+    const { carName, userName, category, description, image, postedBy, price, quantity, added, _id, location } = car;
+    // console.log(_id)
 
     return (
         <div className="overflow-x-auto w-full">
@@ -10,7 +11,7 @@ const Cars = ({ car }) => {
                 {/* head */}
                 <thead>
                     <tr>
-                        
+
                         <th>Image</th>
 
                         <th>Toy Name</th>
@@ -23,7 +24,7 @@ const Cars = ({ car }) => {
                 <tbody>
                     {/* row 1 */}
                     <tr>
-                        
+
                         <td>
                             <div className="flex items-center space-x-3">
                                 <div className="avatar">
@@ -39,7 +40,7 @@ const Cars = ({ car }) => {
                             </div>
                         </td>
                         <td >
-                           {carName}
+                            {carName}
                             <br />
                             <span className="badge badge-ghost badge-sm">Made By Bangladesh</span>
                         </td>
@@ -47,13 +48,14 @@ const Cars = ({ car }) => {
                         <td>{category}</td>
 
 
-                     
-                            <td className="">{price}</td>
-                      
 
-                            <td className="">{quantity} </td>
+                        <td className="">{price}</td>
+
+
+                        <td className="">{quantity} </td>
                         <th>
-                            <button className="btn  btn-primary btn-xs">View Details</button>
+                            <Link to={`/viewDetails/${_id}`}> <button className="btn  btn-primary btn-xs">View Details</button></Link>
+
                         </th>
                     </tr>
 

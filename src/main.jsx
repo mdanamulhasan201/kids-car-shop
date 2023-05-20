@@ -11,9 +11,13 @@ import Login from './pages/Login/Login';
 import Register from './pages/Register/Register';
 import AuthProvider from './provider/AuthProvider';
 import AllToys from './pages/AllToys/AllToys';
-import PrivateRoute from './Routes/PrivateRoute';
+// import PrivateRoute from './Routes/PrivateRoute';
 import AddToy from './pages/AddToy/AddToy';
 import MyCars from './MyCars/MyCars';
+import ViewDetails from './pages/ViewDetails/ViewDetails';
+import UpdateData from './pages/UpdateData/UpdateData';
+import CategoryDetails from './pages/Home/Category/CategoryDetails';
+// import UpdateCar from './pages/UpdateData/UpdateCar';
 
 const router = createBrowserRouter([
   {
@@ -22,28 +26,58 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/',
-        element: <Home></Home>
+        element: <Home></Home>,
       },
       {
-        path: '/login',
+        path: 'category/:id',
+        element: <CategoryDetails></CategoryDetails>
+      },
+      {
+        path: 'login',
         element: <Login></Login>
       },
       {
-        path: '/register',
+        path: 'register',
         element: <Register></Register>
       },
+
       {
-        path: '/allToy',
-        element: <PrivateRoute><AllToys></AllToys></PrivateRoute>
-      },
-      {
-        path: '/addToy',
+        path: 'addToy',
         element: <AddToy></AddToy>
       },
+
+
+      // {
+      //   path: 'updateCar/:id',
+      //   element: <UpdateCar></UpdateCar>,
+      //   loader: ({ params }) => fetch(`http://localhost:5000/updateCars/${params.id}`)
+      // },
+     
       {
-        path: '/myCars',
-        element: <MyCars></MyCars>
+        path: 'allToy',
+        element: <AllToys></AllToys>,
+
+      },
+      {
+        path: 'viewDetails/:id',
+        element: <ViewDetails></ViewDetails>,
+        loader: ({ params }) => fetch(`http://localhost:5000/carDetails/${params.id}`)
+      },
+
+      {
+        path: 'myCars',
+        element: <MyCars></MyCars>,
+
+
+
+      },
+
+      {
+        path: 'updateData/:id',
+        element: <UpdateData></UpdateData>,
+
       }
+
     ]
   },
 ]);

@@ -22,7 +22,7 @@ const AddToy = () => {
         console.log(data);
     }
     return (
-        <div className="md:h-[100vh] flex justify-center  md:mt-20">
+        <div className="flex justify-center  md:mt-20">
 
             <div className="row">
                 <div className="bg-slate-100 shadow-lg md:p-28 p-5">

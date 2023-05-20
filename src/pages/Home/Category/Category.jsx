@@ -29,7 +29,7 @@ const Category = () => {
 
 
         <div>
-            <h1 className="title text-center mt-5 p-5">Available Job's</h1>
+            <h1 className="title text-center mt-5 p-5">Car Category</h1>
             <div className=" text-center  bg-slate-100">
                 <div className="text-center m-auto">
                     <div className="gap-5 ">

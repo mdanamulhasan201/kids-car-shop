@@ -1,7 +1,8 @@
+import { Link } from "react-router-dom";
 
 const TabComponent = ({ toy }) => {
     // console.log(toy)
-    const { image, carName, price } = toy
+    const { image, carName, price, _id } = toy
     return (
      
             <div className="card w-96 bg-red-700 shadow-2xl ">
@@ -12,7 +13,7 @@ const TabComponent = ({ toy }) => {
                 <h2 className="card-title">{carName}</h2>
                 <p>{price}</p>
                 <div className="card-actions">
-                    <button className="btn btn-primary">View Details</button>
+                   <Link to={`/category/${_id}`}> <button className="btn btn-primary">View Details</button></Link>
                 </div>
             </div>
         </div>
