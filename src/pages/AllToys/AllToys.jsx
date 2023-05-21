@@ -12,17 +12,18 @@ const AllToys = () => {
 
 
     useEffect(() => {
-        fetch('http://localhost:5000/allCar')
+        fetch('https://kids-car-shop-server.vercel.app/allCar')
             .then(res => res.json())
             .then(result => {
                 (result)
                 setCars(result.slice(0, 20))
+               
             })
     }, [])
 
     const handleSearch = () => {
 
-        fetch(`http://localhost:5000/carSearch/${search}`)
+        fetch(`https://kids-car-shop-server.vercel.app/carSearch/${search}`)
             .then(res => res.json())
             .then(data => {
                 setCars(data)

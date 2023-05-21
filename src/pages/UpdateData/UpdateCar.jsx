@@ -27,7 +27,7 @@ const UpdateCar = () => {
             if (result.isConfirmed) {
 
 
-                fetch(`http://localhost:5000/updateCar/${id}`, {
+                fetch(`https://kids-car-shop-server.vercel.app/updateCar/${id}`, {
                     method: 'PATCH',
                     headers: {
                         'Content-type': 'application/json'

@@ -18,6 +18,7 @@ import CategoryDetails from './pages/Home/Category/CategoryDetails';
 import PrivateRoute from './Routes/PrivateRoute';
 import UpdateCar from './pages/UpdateData/UpdateCar';
 import Error from './pages/Error/Error';
+import Blog from './pages/Blog/Blog';
 
 
 const router = createBrowserRouter([
@@ -52,7 +53,7 @@ const router = createBrowserRouter([
       {
         path: 'updateCar/:id',
         element: <UpdateCar></UpdateCar>,
-        // loader: ({ params }) => fetch(`http://localhost:5000/updateCars/${params.id}`)
+        // loader: ({ params }) => fetch(`https://kids-car-shop-server.vercel.app/updateCars/${params.id}`)
       },
      
       {
@@ -63,13 +64,17 @@ const router = createBrowserRouter([
       {
         path: 'viewDetails/:id',
         element: <PrivateRoute><ViewDetails></ViewDetails></PrivateRoute>,
-        loader: ({ params }) => fetch(`http://localhost:5000/carDetails/${params.id}`)
+        loader: ({ params }) => fetch(`https://kids-car-shop-server.vercel.app/carDetails/${params.id}`)
       },
 
       {
         path: 'myCars',
         element: <PrivateRoute><MyCars></MyCars></PrivateRoute>,
       },
+      {
+        path: 'blog',
+        element: <Blog></Blog>
+      }
 
     ]
   },

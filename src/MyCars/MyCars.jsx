@@ -16,7 +16,7 @@ const MyCars = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/myCars/${user?.email}`)
+        fetch(`https://kids-car-shop-server.vercel.app/myCars/${user?.email}`)
             .then(res => res.json())
             .then(data => {
                 setMyCar(data)
@@ -37,7 +37,7 @@ const MyCars = () => {
             if (result.isConfirmed) {
 
 
-                fetch(`http://localhost:5000/deleteCar/${id}`, {
+                fetch(`https://kids-car-shop-server.vercel.app/deleteCar/${id}`, {
                     method: 'DELETE'
 
                 })

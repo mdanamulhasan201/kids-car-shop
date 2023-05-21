@@ -9,7 +9,7 @@ const Category = () => {
 
     useEffect(() => {
 
-        fetch(`http://localhost:5000/allCar/${activeTab}`)
+        fetch(`https://kids-car-shop-server.vercel.app/allCar/${activeTab}`)
             .then(res => res.json())
             .then(result => {
                 setToy(result.slice(0, 3))

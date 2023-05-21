@@ -1,19 +1,19 @@
 import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../../provider/AuthProvider";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+
 
 
 
 const AddToy = () => {
-    const notify = () => toast("Wow so easy!");
+
     const { user } = useContext(AuthContext);
     const [success, setSuccess] = useState('')
+    const [error, setError] = useState('')
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
 
     const onSubmit = data => {
-        fetch('http://localhost:5000/postCar', {
+        fetch('https://kids-car-shop-server.vercel.app/postCar', {
             method: 'POST',
             headers: {
                 'Content-type': 'application/json'
@@ -22,7 +22,10 @@ const AddToy = () => {
         })
             .then(res => res.json())
             .then(result => {
-                setSuccess('Data Added', result)
+                setSuccess('Added Your Car', result)
+            })
+            .catch((error) => {
+                setError('Try agin Later...', error)
             })
         // console.log(data);
     }
@@ -177,8 +180,9 @@ const AddToy = () => {
                             />
                         </div>
                         <input className="btn btn-primary btn-block flex mx-auto mt-10" value="Car Added" type="submit" />
-                        <ToastContainer />
-                        <p>{success}</p>
+
+                        <p className="text-green-500 font-bold mt-5">{success}</p>
+                        <p className="text-red-700 font-bold mt-5">{error}</p>
                     </form>
                 </div>
             </div>

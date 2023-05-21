@@ -10,7 +10,7 @@ const CategoryDetails = () => {
   const { carName, userName, quantity, description, image, location, postedBy, price } = detailsData
 
   useEffect(() => {
-    fetch(`http://localhost:5000/carDetails/${id}`)
+    fetch(`https://kids-car-shop-server.vercel.app/carDetails/${id}`)
       .then(res => res.json())
       .then(data => {
         // console.log(data)
