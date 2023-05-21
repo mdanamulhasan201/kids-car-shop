@@ -17,12 +17,14 @@ import ViewDetails from './pages/ViewDetails/ViewDetails';
 import CategoryDetails from './pages/Home/Category/CategoryDetails';
 import PrivateRoute from './Routes/PrivateRoute';
 import UpdateCar from './pages/UpdateData/UpdateCar';
+import Error from './pages/Error/Error';
 
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Main></Main>,
+    errorElement: <Error></Error>,
     children: [
       {
         path: '/',

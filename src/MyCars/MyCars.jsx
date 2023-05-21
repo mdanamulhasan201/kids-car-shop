@@ -64,11 +64,11 @@ const MyCars = () => {
 
 
     return (
-        <div className="overflow-x-auto w-full mt-10">
+        <div className="overflow-x-auto w-full h-[550px] mt-10">
             <h2 className="text-center font-bold my-5 text-3xl">My <span className="text-primary">Cars</span></h2>
             <table className="table w-full">
                 {/* head */}
-                <thead>
+                <thead className="sticky top-0">
                     <tr>
 
                         <th>#</th>
@@ -86,7 +86,7 @@ const MyCars = () => {
                         mycar.map((car, index) => (
                             <tr key={car._id}>
                                 <td>{index + 1}</td>
-                                <td className="mask mask-squircle w-28 h-28"><img src={car.image} alt="" /></td>
+                                <td className="rounded-full w-28 h-28"><img src={car.image} alt="" /></td>
                                 <td>{car.carName}</td>
                                 <td>{car.category}</td>
                                 <td>{car.price}</td>
