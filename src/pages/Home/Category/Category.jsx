@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import TabComponent from "../../TabComponent/TabComponent";
+import Subscripe from "../Subscripe/Subscripe";
 
 const Category = () => {
     const [toys, setToy] = useState([])
@@ -61,6 +62,8 @@ const Category = () => {
                     </TabComponent>
                 ))}
             </div>
+
+            <Subscripe></Subscripe>
         </div>
 
     );
