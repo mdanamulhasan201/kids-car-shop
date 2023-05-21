@@ -1,10 +1,13 @@
 import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../../provider/AuthProvider";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 
 const AddToy = () => {
+    const notify = () => toast("Wow so easy!");
     const { user } = useContext(AuthContext);
     const [success, setSuccess] = useState('')
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
@@ -157,8 +160,8 @@ const AddToy = () => {
                                 <option value="Land Rover">Land Rover</option>
                                 <option value="Toyota">Toyota</option>
                                 <option value="Tractor">Tractor</option>
-                                
-                               
+
+
                             </select>
 
                         </div>
@@ -174,6 +177,7 @@ const AddToy = () => {
                             />
                         </div>
                         <input className="btn btn-primary btn-block flex mx-auto mt-10" value="Car Added" type="submit" />
+                        <ToastContainer />
                         <p>{success}</p>
                     </form>
                 </div>
