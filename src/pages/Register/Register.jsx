@@ -6,6 +6,7 @@ import { useContext, useState } from 'react';
 import { AuthContext } from '../../provider/AuthProvider';
 import { GithubAuthProvider, GoogleAuthProvider, getAuth, signInWithPopup } from 'firebase/auth';
 import app from '../../Firebase/firebase.config';
+import { FaArrowRight } from "react-icons/fa";
 
 
 
@@ -200,11 +201,7 @@ const Register = () => {
                                     required
                                     className="block w-full p-2 rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                                 />
-                                <div className="text-sm text-end mt-2">
-                                    <a className="font-semibold cursor-pointer text-indigo-600 hover:text-indigo-500">
-                                        Forgot password?
-                                    </a>
-                                </div>
+                                
                                 <p className='text-red-600'>{error}</p>
                                 <p className='text-green-500'>{success}</p>
                             </div>
@@ -215,7 +212,13 @@ const Register = () => {
 
                                 className="flex w-full justify-center rounded-md bg-primary px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-[#3FACB1] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                             >
-                                Sign in
+                                <div className="flex items-center">
+                                    <div className='mr-2'>
+                                        <p> Sign in</p>
+                                    </div>
+                                    <FaArrowRight> </FaArrowRight>
+                                </div>
+
                             </button>
                         </div>
 
@@ -232,7 +235,7 @@ const Register = () => {
                     <hr />
                     <p className="mt-10 text-center text-sm text-gray-500">
                         Already Have an account?{' '}
-                        <Link to='/login' className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500">
+                        <Link to='/login' className="font-semibold leading-6  hover:text-primary">
                             Login
                         </Link>
                     </p>

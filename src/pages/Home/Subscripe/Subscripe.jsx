@@ -1,4 +1,4 @@
-
+import { FaArrowRight } from "react-icons/fa";
 const Subscripe = () => {
     return (
         <div className="hero my-20 " style={{ backgroundImage: `url("https://i.ibb.co/cNKrmW9/slide.jpg")` }}>
@@ -18,7 +18,7 @@ const Subscripe = () => {
                                 </label>
                             </div>
                             <div className="">
-                                <button className="btn btn-primary sm:ms-20 " type="submit">Get Started</button>
+                                <button className="btn btn-primary sm:ms-20 " type="submit"><span className='mr-1'>Subscribe</span><FaArrowRight> </FaArrowRight> </button>
                             </div>
                         </div>
                     </div>

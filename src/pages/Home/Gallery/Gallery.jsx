@@ -1,4 +1,5 @@
 import './Gallery.css'
+import { FaArrowRight } from "react-icons/fa";
 
 const Gallery = () => {
     return (
@@ -17,7 +18,7 @@ const Gallery = () => {
                             <p>Product Code: Product 5</p>
                             <p>Price: $200</p>
                             <p>Availability: In Stock</p>
-                            <button className='btn btn-outline btn-primary'>buy now</button>
+                            <button className='btn btn-outline btn-primary'>buy now <FaArrowRight></FaArrowRight> </button>
                         </div>
                     </div>
                 </div>
@@ -32,7 +33,7 @@ const Gallery = () => {
                             <p>Product Code: Product 18</p>
                             <p>Price: $200</p>
                             <p>Availability: In Stock</p>
-                            <button className='btn btn-outline btn-primary'>buy now</button>
+                            <button className='btn btn-outline btn-primary'>buy now <FaArrowRight></FaArrowRight> </button>
                         </div>
                     </div>
                 </div>
@@ -47,7 +48,7 @@ const Gallery = () => {
                             <p>Product Code: Product 19</p>
                             <p>Price: $250</p>
                             <p>Availability: In Stock</p>
-                            <button className='btn btn-outline btn-primary'>buy now</button>
+                            <button className='btn btn-outline btn-primary'>buy now <FaArrowRight></FaArrowRight> </button>
                         </div>
                     </div>
                 </div>
@@ -62,7 +63,7 @@ const Gallery = () => {
                             <p>Product Code: Product 22</p>
                             <p>Price: $150</p>
                             <p>Availability: In Stock</p>
-                            <button className='btn btn-outline btn-primary'>buy now</button>
+                            <button className='btn btn-outline btn-primary'>buy now <FaArrowRight></FaArrowRight> </button>
                         </div>
                     </div>
                 </div>
@@ -77,7 +78,7 @@ const Gallery = () => {
                             <p>Product Code: Product 10</p>
                             <p>Price: $200</p>
                             <p>Availability: In Stock</p>
-                            <button className='btn btn-outline btn-primary'>buy now</button>
+                            <button className='btn btn-outline btn-primary'>buy now <FaArrowRight></FaArrowRight> </button>
                         </div>
                     </div>
                 </div>
@@ -92,7 +93,7 @@ const Gallery = () => {
                             <p>Product Code: Product 15</p>
                             <p>Price: $300</p>
                             <p>Availability: In Stock</p>
-                            <button className='btn btn-outline btn-primary'>buy now</button>
+                            <button className='btn btn-outline btn-primary'>buy now <FaArrowRight></FaArrowRight> </button>
                         </div>
                     </div>
                 </div>

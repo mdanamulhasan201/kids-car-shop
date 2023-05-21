@@ -1,5 +1,4 @@
-// import React from 'react';
-
+import { FaArrowRight } from "react-icons/fa";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
@@ -46,7 +45,7 @@ const CategoryDetails = () => {
                 <hr />
 
                 {/* <Link to='/allToy' className=""><button className="btn">back</button></Link> */}
-                <button className="btn btn-primary btn-block mt-5 text-gray-800 font-bold rounded-lg shadow-md hover:shadow-lg transition duration-300">Buy Now</button>
+                <button className="btn btn-primary btn-block mt-5 text-gray-800 font-bold rounded-lg shadow-md hover:shadow-lg transition duration-300"> <span className='mr-2'>Buy Now </span> <FaArrowRight> </FaArrowRight> </button>
 
               </div>
               <div className="absolute top-2 right-2 py-2 px-4 bg-white rounded-lg">

@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { FaArrowRight } from "react-icons/fa";
 
 
 const Cars = ({ car }) => {
@@ -54,7 +55,7 @@ const Cars = ({ car }) => {
 
                         <td className="">{quantity} </td>
                         <th>
-                            <Link to={`/viewDetails/${_id}`}> <button className="btn  btn-primary btn-xs">View Details</button></Link>
+                            <Link to={`/viewDetails/${_id}`}> <button className="btn  btn-primary btn-xs"> <span className='mr-1'>View Details</span> <FaArrowRight> </FaArrowRight> </button></Link>
 
                         </th>
                     </tr>

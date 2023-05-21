@@ -45,7 +45,7 @@ const Navbar = () => {
 
                 <div className="flex items-center">
                     <img className="h-10 w-10 mr-2" src={logo} alt="" />
-                    <Link to='/' className=" normal-case font-bold sm:text-sm md:text-2xl md:block">Carville</Link>
+                    <Link to='/' className=" normal-case font-bold sm:text-sm md:text-2xl md:block text-primary">Carville</Link>
                 </div>
             </div>
             <div className="navbar-center hidden lg:flex">

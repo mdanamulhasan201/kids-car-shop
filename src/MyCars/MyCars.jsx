@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../provider/AuthProvider";
 import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
+import { FaArrowRight } from "react-icons/fa";
 
 
 const MyCars = () => {
@@ -92,13 +93,13 @@ const MyCars = () => {
                                 <td>{car.quantity}</td>
                                 <td>
 
-                            <Link to={`/updateCar/${car._id}`}><button className="btn  btn-primary btn-xs">Edit</button></Link>
+                            <Link to={`/updateCar/${car._id}`}><button className="btn  btn-primary btn-xs"> <span className='mr-1'>Edit </span> <FaArrowRight> </FaArrowRight> </button></Link>
 
 
                                 </td>
                                 <td>
                                     {" "}
-                                    <button onClick={() => handleDelete(car._id)} className="btn  btn-secondary btn-xs">Delete</button>
+                                    <button onClick={() => handleDelete(car._id)} className="btn  btn-secondary btn-xs"><span className='mr-1'>Delete </span> <FaArrowRight> </FaArrowRight></button>
 
                                 </td>
 

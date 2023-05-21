@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import { AuthContext } from "../../provider/AuthProvider";
 import Swal from "sweetalert2";
 
+
 const UpdateCar = () => {
 
     const { id } = useParams()
@@ -59,7 +60,7 @@ const UpdateCar = () => {
         <div className="flex justify-center  md:my-20">
 
             <div className="row">
-            <h2 className="font-bold text-3xl mb-5 text-center">Update <span className="text-primary">Car</span></h2>
+            <h2 className="font-bold text-3xl mb-5 text-center">Update <span className="text-primary">Car Details</span></h2>
                 <div className="bg-slate-100 shadow-lg md:p-20 p-5">
                     
                     <form onSubmit={handleSubmit(onSubmit)}>
@@ -202,7 +203,7 @@ const UpdateCar = () => {
                             />
                         </div>
                         <input className="btn btn-primary btn-block flex mx-auto mt-10" value="Car Added" type="submit" />
-                      
+                 
                     </form>
                 </div>
             </div>

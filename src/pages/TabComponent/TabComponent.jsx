@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { FaArrowRight } from "react-icons/fa";
 
 const TabComponent = ({ toy }) => {
     // console.log(toy)
@@ -22,7 +23,7 @@ const TabComponent = ({ toy }) => {
 
                                 <p className="text-gray-700 tracking-wide  hover:text-gray-900 hover:cursor-pointer"><span className="font-bold">Location: </span>{location}</p>
                                 <Link to={`/category/${_id}`}>
-                                    <button className="btn btn-primary btn-block mt-5 text-gray-800 font-bold rounded-lg shadow-md hover:shadow-lg transition duration-300">View Details</button>
+                                    <button className="btn btn-primary btn-block mt-5 text-gray-800 font-bold rounded-lg shadow-md hover:shadow-lg transition duration-300"> <span className='mr-2'>View Details </span> <FaArrowRight> </FaArrowRight> </button>
 
                                 </Link>
                             </div>
