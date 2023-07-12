@@ -1,10 +1,15 @@
 import { FaArrowRight } from "react-icons/fa";
+import AOS from 'aos';
+import 'aos/dist/aos.css'; 
 const Subscripe = () => {
+    AOS.init({
+        duration: 800, 
+    });
     return (
-        <div className="hero my-20 " style={{ backgroundImage: `url("https://i.ibb.co/cNKrmW9/slide.jpg")` }}>
-            <div className="hero-overlay bg-opacity-40"></div>
+        <div className="hero my-32 " data-aos="fade-up"  data-aos-anchor-placement="bottom-bottom"  style={{ backgroundImage: `url("https://i.ibb.co/cNKrmW9/slide.jpg")` }}>
+            <div  className="hero-overlay bg-opacity-40"></div>
             <div className="hero-content text-center text-neutral-content">
-                <div className="max-w-md">
+                <div className="max-w-md"  data-aos="zoom-in" data-aos-duration="4000">
                     <h1 className="mb-2 text-4xl text-white font-bold">Subscribe To Our Emails</h1>
                     <div className="form-control">
                         <label className="label">

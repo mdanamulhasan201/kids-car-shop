@@ -1,13 +1,20 @@
 import { Link } from "react-router-dom";
 import { FaArrowRight } from "react-icons/fa";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 
 const Cars = ({ car }) => {
     const { carName, userName, category, description, image, postedBy, price, quantity, added, _id, location } = car;
     // console.log(car)
 
+    AOS.init({
+        duration: 800,
+    });
+
     return (
-        <div className="overflow-x-auto w-full">
+        <div data-aos="fade-up"
+        data-aos-duration="3000" className="overflow-x-auto w-full">
             <table className="table w-full">
                 {/* head */}
                 <thead>

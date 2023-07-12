@@ -1,12 +1,18 @@
 import './Gallery.css'
 import { FaArrowRight } from "react-icons/fa";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Gallery = () => {
+    AOS.init({
+        duration: 800,
+    });
     return (
 
         <>
             <h3 className='text-center font-bold text-3xl  mt-28 mb-8 '> Car <span className='text-primary '>Gallery</span></h3>
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-5 gap-10 mb-8 p-2 sm:ms-20 '>
+            <div data-aos="fade-up"
+                data-aos-anchor-placement="top-center" className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-5 justify-between gap-10 mb-8 p-2 sm:ms-20 '>
                 <div className="card">
                     <div className="image">
                         <img src="https://staranddaisy.in/wp-content/uploads/2023/03/lfc_1366m_yellow_1.jpg" />

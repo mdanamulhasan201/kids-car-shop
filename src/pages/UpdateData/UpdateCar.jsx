@@ -1,5 +1,5 @@
-import {  useParams } from "react-router-dom";
-import { useContext } from "react";
+import { useParams } from "react-router-dom";
+import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../../provider/AuthProvider";
 import Swal from "sweetalert2";
@@ -10,7 +10,8 @@ const UpdateCar = () => {
     const { id } = useParams()
     console.log(id)
     const { user } = useContext(AuthContext);
-
+    const [success, setSuccess] = useState('')
+    const [error, setError] = useState('')
 
 
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
@@ -46,8 +47,8 @@ const UpdateCar = () => {
                         }
 
                     })
-                    .catch((error)=>{
-                        console.error("Error", error)
+                    .catch((error) => {
+                        setError("Error", error)
                     })
 
             }
@@ -60,9 +61,9 @@ const UpdateCar = () => {
         <div className="flex justify-center  md:my-20">
 
             <div className="row">
-            <h2 className="font-bold text-3xl mb-5 text-center">Update <span className="text-primary">Car Details</span></h2>
-                <div className="bg-slate-100 shadow-lg md:p-20 p-5">
-                    
+                <h2 className="font-bold text-3xl mb-5 text-center">Add <span className="text-primary">Car</span></h2>
+                <div className="bg-slate-100 shadow-lg md:p-28 p-5">
+
                     <form onSubmit={handleSubmit(onSubmit)}>
 
                         <div className="md:flex">
@@ -70,9 +71,8 @@ const UpdateCar = () => {
                                 <p className="font-bold text-xl md:mr-7">Car name:</p>
                                 <input
                                     className="border-solid border-2 p-4 m-2 bg-slate-50"
-                                    {...register("carName", { required: false })}
+                                    {...register("carName", { required: true })}
                                     placeholder="Car Name"
-                                    value={id?.carName}
 
 
                                 />
@@ -82,7 +82,7 @@ const UpdateCar = () => {
                                 <p className="font-bold text-xl">Toy URL:</p>
                                 <input
                                     className="border-solid border-2 p-4 m-2 bg-slate-50"
-                                    {...register("image", { required: false })}
+                                    {...register("image", { required: true })}
                                     placeholder="Image URL"
                                     type="url"
 
@@ -99,7 +99,7 @@ const UpdateCar = () => {
                                 <p className="font-bold text-xl">Seller Name:</p>
                                 <input
                                     className="border-solid border-2 p-4 m-2 bg-slate-50"
-                                    {...register("userName", { required: false })}
+                                    {...register("userName", { required: true })}
                                     placeholder="UserName"
                                     value={user?.displayName}
 
@@ -114,7 +114,7 @@ const UpdateCar = () => {
                                     className="border-solid border-2 p-4 m-2 bg-slate-50"
                                     value={user?.email}
                                     readOnly
-                                    {...register("postedBy", { required: false })}
+                                    {...register("postedBy", { required: true })}
                                     placeholder="your email"
                                     type="email"
 
@@ -129,9 +129,9 @@ const UpdateCar = () => {
                                 <p className="font-bold text-xl md:mr-16">Price:</p>
                                 <input
                                     className="border-solid border-2 p-4 m-2 bg-slate-50"
-                                    {...register("price", { required: false })}
+                                    {...register("price", { required: true })}
                                     placeholder="Price"
-                                    defaultValue="$5000"
+                                    defaultValue={"$"}
 
                                 />
                             </div>
@@ -142,7 +142,7 @@ const UpdateCar = () => {
                                 <p className="font-bold text-xl md:mr-7">Quantity:</p>
                                 <input
                                     className="border-solid border-2 p-4 m-2 bg-slate-50"
-                                    {...register("quantity", { required: false })}
+                                    {...register("quantity", { required: true })}
                                     placeholder="Quantity"
                                     type="number"
 
@@ -158,7 +158,7 @@ const UpdateCar = () => {
                                 <p className="font-bold text-xl md:mr-7">Location:</p>
                                 <input
                                     className="border-solid border-2 p-4 m-2 md:mr-24 bg-slate-50"
-                                    {...register("location", { required: false })}
+                                    {...register("location", { required: true })}
                                     placeholder="Location"
 
 
@@ -184,10 +184,15 @@ const UpdateCar = () => {
                         <div className="flex items-center md:mr-14 ">
                             <p className="font-bold text-xl md:mr-9">Category:</p>
                             <select className="border-solid md:w-[550px]  border-2 p-4 m-2 bg-slate-50" {...register("category", { required: true })}>
-                                <option value="Feugiatdiam">FEUGIAT DIAM</option>
-                                <option value="AeneanSodales">AENEAN SODALES</option>
-                                <option value="AenenQuis">AENEAN QUIS</option>
-                                <option value="AeneanSodales">AENEAN SODALES</option>
+                                <option value="sports Car">Sports Car</option>
+                                <option value="Race Car">Race Car</option>
+                                <option value="RideOn Truck">Ride On Truck</option>
+                                <option value="Toys Truck ">Toys Truck</option>
+                                <option value="Land Rover">Land Rover</option>
+                                <option value="Toyota">Toyota</option>
+                                <option value="Tractor">Tractor</option>
+
+
                             </select>
 
                         </div>
@@ -196,18 +201,21 @@ const UpdateCar = () => {
                             <p className="font-bold text-xl md:mr-14">Details:</p>
                             <input
                                 className="border-solid border-2 p-4 m-2 md:h-20 md:w-[550px] bg-slate-50"
-                                {...register("description", { required: false })}
+                                {...register("description", { required: true })}
                                 placeholder="Description"
 
 
                             />
                         </div>
                         <input className="btn btn-primary btn-block flex mx-auto mt-10" value="Car Added" type="submit" />
-                 
+
+                        <p className="text-green-500 font-bold mt-5">{success}</p>
+                        <p className="text-red-700 font-bold mt-5">{error}</p>
                     </form>
                 </div>
             </div>
         </div>
+
 
     );
 };
